@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace AddressBookSystem
 {
@@ -6,28 +7,38 @@ namespace AddressBookSystem
     {
         static void Main()
         {
-            // creating object
-            AddressBook book = new AddressBook();
+            Console.WriteLine("Welcome to Address Book Program...");
 
-            // calls set accessor of the properties
-            book.FirstName = "Mayur";
-            book.LastName = "W";
-            book.Address = "Navi Mumbai";
-            book.City = "Vashi";
-            book.State = "Maharashtra";
-            book.Zip = 400703;
-            book.PhoneNumber = 808080;
-            book.Email = "mayur.wankhade2@gmail.com";
+            AddressBook addressBook = new AddressBook();
 
-            // displaying values
-            Console.WriteLine("First Name : " + book.FirstName);
-            Console.WriteLine("Last Name : " + book.LastName);
-            Console.WriteLine("Address : " + book.Address);
-            Console.WriteLine("City : " + book.City);
-            Console.WriteLine("State : " + book.State);
-            Console.WriteLine("Zip : " + book.Zip);
-            Console.WriteLine("Phone Number : " + book.PhoneNumber);
-            Console.WriteLine("Email : " + book.Email);
+            Console.WriteLine("Enter your First Name : ");
+            string firstName = Console.ReadLine();
+
+            Console.WriteLine("Enter your Last Name : ");
+            string lastName = Console.ReadLine();
+
+            Console.WriteLine("Enter your Address : ");
+            string address = Console.ReadLine();
+
+            Console.WriteLine("Enter your City : ");
+            string city = Console.ReadLine();
+
+            Console.WriteLine("Enter your State : ");
+            string state = Console.ReadLine();
+
+            Console.WriteLine("Enter your Zip : ");
+            int zip = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Enter your Phone Number : ");
+            long phoneNumber = Convert.ToInt64(Console.ReadLine());
+
+            Console.WriteLine("Enter your Email : ");
+            string email = Console.ReadLine();
+
+            Console.WriteLine();
+
+            addressBook.AddContact(firstName, lastName, address, city, state, zip, phoneNumber, email);
+            addressBook.ShowContact();
         }
     }
 }
