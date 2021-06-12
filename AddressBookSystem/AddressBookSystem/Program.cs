@@ -40,6 +40,11 @@ namespace AddressBookSystem
             Console.WriteLine();
 
             addressBook.AddContact(firstName, lastName, address, city, state, zip, phoneNumber, email);
+
+            addressBook.ShowContact();
+
+            addressBook.EditContact();
+
             addressBook.ShowContact();
         }
     }
