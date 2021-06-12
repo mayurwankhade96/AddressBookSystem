@@ -9,8 +9,10 @@ namespace AddressBookSystem
         {
             Console.WriteLine("Welcome to Address Book Program...");
 
+            // Creating object
             AddressBook addressBook = new AddressBook();
 
+            // Getting input from user
             Console.WriteLine("Enter your First Name : ");
             string firstName = Console.ReadLine();
 

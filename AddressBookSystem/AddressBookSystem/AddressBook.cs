@@ -6,8 +6,20 @@ namespace AddressBookSystem
 {
     class AddressBook
     {
+        // Declaring and initializing list with model class
         List<Contact> Contacts = new List<Contact>();
 
+        /// <summary>
+        /// Method to add contact details to list
+        /// </summary>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <param name="address"></param>
+        /// <param name="city"></param>
+        /// <param name="state"></param>
+        /// <param name="zip"></param>
+        /// <param name="phoneNumber"></param>
+        /// <param name="email"></param>
         public void AddContact(string firstName, string lastName, string address, string city, string state, int zip, long phoneNumber, string email)
         {
             Contact C = new Contact();
@@ -23,6 +35,9 @@ namespace AddressBookSystem
             Contacts.Add(C);
         }
 
+        /// <summary>
+        /// Method to display contact
+        /// </summary>
         public void ShowContact()
         {
             foreach (Contact C in Contacts)
