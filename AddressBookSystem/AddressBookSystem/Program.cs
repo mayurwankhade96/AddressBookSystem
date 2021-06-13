@@ -7,7 +7,7 @@ namespace AddressBookSystem
     {
         static void Main()
         {
-            Console.WriteLine("Welcome to Address Book Program...");
+            Console.WriteLine("Welcome to Address Book Program..." + "\n");
 
             // Creating object
             AddressBook addressBook = new AddressBook();
@@ -16,7 +16,7 @@ namespace AddressBookSystem
 
             do
             {
-                Console.WriteLine("Select an Option : ");
+                Console.WriteLine("**Select an Option**");
                 Console.WriteLine("Press 1. To add new person");
                 Console.WriteLine("Press 2. To edit existing person");
                 Console.WriteLine("Press 3. To delete a person");
