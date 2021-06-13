@@ -40,19 +40,18 @@ namespace AddressBookSystem
         /// </summary>
         public void ShowContact()
         {
-            if (Contacts.Count >= 1)
+            if (Contacts.Count > 0)
             {
                 foreach (Contact C in Contacts)
                 {
-                    Console.WriteLine("First Name : " + C.FirstName);
-                    Console.WriteLine("Last Name : " + C.LastName);
-                    Console.WriteLine("Address : " + C.Address);
-                    Console.WriteLine("City : " + C.City);
-                    Console.WriteLine("State : " + C.State);
-                    Console.WriteLine("Zip : " + C.Zip);
+                    Console.WriteLine("First Name   : " + C.FirstName);
+                    Console.WriteLine("Last Name    : " + C.LastName);
+                    Console.WriteLine("Address      : " + C.Address);
+                    Console.WriteLine("City         : " + C.City);
+                    Console.WriteLine("State        : " + C.State);
+                    Console.WriteLine("Zip          : " + C.Zip);
                     Console.WriteLine("Phone Number : " + C.PhoneNumber);
-                    Console.WriteLine("Email : " + C.Email);
-                    Console.WriteLine();
+                    Console.WriteLine("Email        : " + C.Email + "\n");
                 }
             }
             else
@@ -154,6 +153,9 @@ namespace AddressBookSystem
             }
         }
 
+        /// <summary>
+        /// Method to delete person
+        /// </summary>
         public void DeletePerson()
         {
             int NumOfPersons = 0;
