@@ -7,12 +7,11 @@ namespace AddressBookSystem
     {
         static void Main()
         {
-            Console.WriteLine("Welcome to Address Book Program..." + "\n");
+            Console.WriteLine("...Welcome to Address Book Program..." + "\n");
 
             // Creating object
             AddressBook addressBook = new AddressBook();
-
-            string userChoice = "";
+            string userChoice = string.Empty;
 
             do
             {
@@ -74,7 +73,7 @@ namespace AddressBookSystem
                 }
                 do
                 {
-                    Console.WriteLine("Do you want to continue - Yes or No??");
+                    Console.WriteLine("\n" + "Do you want to continue - Yes or No??");
                     userChoice = Console.ReadLine().ToUpper();
 
                     if (userChoice != "YES" && userChoice != "NO")

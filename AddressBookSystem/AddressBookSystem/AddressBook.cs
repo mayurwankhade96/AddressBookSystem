@@ -7,7 +7,7 @@ namespace AddressBookSystem
     class AddressBook
     {
         // Declaring and initializing list with model class
-        List<Contact> Contacts = new List<Contact>();
+        List<Contact> contacts = new List<Contact>();
 
         /// <summary>
         /// Method to add contact details to list
@@ -22,36 +22,36 @@ namespace AddressBookSystem
         /// <param name="email"></param>
         public void AddContact(string firstName, string lastName, string address, string city, string state, int zip, long phoneNumber, string email)
         {
-            Contact C = new Contact();
-            C.FirstName = firstName;
-            C.LastName = lastName;
-            C.Address = address;
-            C.City = city;
-            C.State = state;
-            C.Zip = zip;
-            C.PhoneNumber = phoneNumber;
-            C.Email = email;
+            Contact person = new Contact();
+            person.FirstName = firstName;
+            person.LastName = lastName;
+            person.Address = address;
+            person.City = city;
+            person.State = state;
+            person.Zip = zip;
+            person.PhoneNumber = phoneNumber;
+            person.Email = email;
 
-            Contacts.Add(C);
+            contacts.Add(person);
         }
 
         /// <summary>
-        /// Method to display contact
+        /// Method to display contacts
         /// </summary>
         public void ShowContact()
         {
-            if (Contacts.Count > 0)
+            if (contacts.Count > 0)
             {
-                foreach (Contact C in Contacts)
+                foreach (Contact person in contacts)
                 {
-                    Console.WriteLine("First Name   : " + C.FirstName);
-                    Console.WriteLine("Last Name    : " + C.LastName);
-                    Console.WriteLine("Address      : " + C.Address);
-                    Console.WriteLine("City         : " + C.City);
-                    Console.WriteLine("State        : " + C.State);
-                    Console.WriteLine("Zip          : " + C.Zip);
-                    Console.WriteLine("Phone Number : " + C.PhoneNumber);
-                    Console.WriteLine("Email        : " + C.Email + "\n");
+                    Console.WriteLine("First Name   : " + person.FirstName);
+                    Console.WriteLine("Last Name    : " + person.LastName);
+                    Console.WriteLine("Address      : " + person.Address);
+                    Console.WriteLine("City         : " + person.City);
+                    Console.WriteLine("State        : " + person.State);
+                    Console.WriteLine("Zip          : " + person.Zip);
+                    Console.WriteLine("Phone Number : " + person.PhoneNumber);
+                    Console.WriteLine("Email        : " + person.Email + "\n");
                 }
             }
             else
@@ -63,14 +63,14 @@ namespace AddressBookSystem
         /// </summary>
         public void EditContact()
         {
-            if (Contacts.Count > 0)
+            if (contacts.Count > 0)
             {
                 Console.WriteLine("Enter First Name of the contact to be edited : ");
                 string fName = Console.ReadLine();
 
-                foreach (Contact contact in Contacts)
+                foreach (Contact person in contacts)
                 {
-                    if (contact.FirstName.Equals(fName))
+                    if (person.FirstName.Equals(fName))
                     {
                         int fieldToBeEdited = 0;
                         while (fieldToBeEdited != 9)
@@ -93,56 +93,56 @@ namespace AddressBookSystem
                                 case 1:
                                     Console.WriteLine("Edit First Name : ");
                                     string firstName = Console.ReadLine();
-                                    contact.FirstName = firstName;
+                                    person.FirstName = firstName;
                                     Console.WriteLine("First Name Edited Successfully.");
                                     break;
 
                                 case 2:
                                     Console.WriteLine("Edit Last Name : ");
                                     string lastName = Console.ReadLine();
-                                    contact.LastName = lastName;
+                                    person.LastName = lastName;
                                     Console.WriteLine("Last Name Edited Successfully.");
                                     break;
 
                                 case 3:
                                     Console.WriteLine("Edit Address : ");
                                     string address = Console.ReadLine();
-                                    contact.Address = address;
+                                    person.Address = address;
                                     Console.WriteLine("Address Edited Successfully.");
                                     break;
 
                                 case 4:
                                     Console.WriteLine("Edit City : ");
                                     string city = Console.ReadLine();
-                                    contact.City = city;
+                                    person.City = city;
                                     Console.WriteLine("City Edited Successfully.");
                                     break;
 
                                 case 5:
                                     Console.WriteLine("Edit State : ");
                                     string state = Console.ReadLine();
-                                    contact.State = state;
+                                    person.State = state;
                                     Console.WriteLine("State Edited Successfully.");
                                     break;
 
                                 case 6:
                                     Console.WriteLine("Edit Zip : ");
                                     int zip = Convert.ToInt32(Console.ReadLine());
-                                    contact.Zip = zip;
+                                    person.Zip = zip;
                                     Console.WriteLine("Zip Edited Successfully.");
                                     break;
 
                                 case 7:
                                     Console.WriteLine("Edit Phone Number : ");
                                     long phoneNumber = Convert.ToInt64(Console.ReadLine());
-                                    contact.PhoneNumber = phoneNumber;
+                                    person.PhoneNumber = phoneNumber;
                                     Console.WriteLine("Phone Number Edited Successfully.");
                                     break;
 
                                 case 8:
                                     Console.WriteLine("Edit Email : ");
                                     string email = Console.ReadLine();
-                                    contact.Email = email;
+                                    person.Email = email;
                                     Console.WriteLine("Email Edited Successfully.");
                                     break;
                             }
@@ -153,26 +153,26 @@ namespace AddressBookSystem
                         Console.WriteLine("Enter a valid name...");
                     }
                 }
-            }            
+            }
         }
 
         /// <summary>
-        /// Method to delete person
+        /// Method to remove person
         /// </summary>
         public void DeletePerson()
         {
-            if (Contacts.Count > 0)
+            if (contacts.Count > 0)
             {
                 ShowContact();
 
                 Console.WriteLine("Enter the First Name of the person you want to delete : ");
                 string firstName = Console.ReadLine();
 
-                for (int i = 0; i < Contacts.Count; i++)
+                for (int i = 0; i < contacts.Count; i++)
                 {
-                    if (Contacts[i].FirstName.Equals(firstName))
+                    if (contacts[i].FirstName.Equals(firstName))
                     {
-                        Contacts.RemoveAt(i);
+                        contacts.RemoveAt(i);
                         Console.WriteLine("Person Removed Successfully.");
                     }
                     else
